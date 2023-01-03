@@ -14,7 +14,7 @@ app.use(express.json())
 //get financial data
 app.get("/api/", async (req, res) => {
     try {
-        const results = await db.query("SELECT * FROM financial_data")
+        const results = await db.query("SELECT * FROM financial_data ORDER BY year")
 
         console.log(results.rows)
 
